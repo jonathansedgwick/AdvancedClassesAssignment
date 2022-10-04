@@ -54,8 +54,9 @@ class Employee constructor(name: String,
         else {
             var overHours = hoursIn - 40
             var overPay = payRate * 1.5
-            pay = overPay * overHours
-            pay += 40 * payRate
+            pay = 40 * payRate
+            if (!salary)
+            pay += overPay * overHours
             println("$name earned ${round.format(pay)}")
         }
 
